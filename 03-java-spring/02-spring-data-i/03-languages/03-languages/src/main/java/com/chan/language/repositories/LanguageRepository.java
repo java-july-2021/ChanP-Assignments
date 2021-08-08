@@ -9,5 +9,5 @@ import com.chan.language.models.Language;
 
 @Repository
 public interface LanguageRepository extends CrudRepository<Language, Long> {
-	List<Language> findall();
+	List<Language> findAll();
 }

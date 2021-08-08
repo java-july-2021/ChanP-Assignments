@@ -17,19 +17,23 @@
 <td>Version</td>
 <td>Action</td>
 </tr>
+</thead>
 <tbody>
 <c:forEach items="${allLanguages}" var="lang">
 <tr>
-<td>${lang.name}</td>
+<td><a href="/show/${lang.id}">${lang.name}</a></td>
 <td>${lang.creator}</td>
 <td>${lang.currentVersion}</td>
-<td><a href="/edit/${lang.id}">Edit</a> |<a href="/delete/${lang.id}">Delete</a></td>
+<td><a href="/edit/${lang.id}">Edit</a> | <a href="/delete/${lang.id}">Delete</a> | <form method="POST" action="/delete/${lang.id}">
+<input type="hidden" name="_method" value="delete">
+<button>Delete</button>
+</form></td>
 </tr>
 </c:forEach>
 </tbody>
 </table>
 
-<form:form action="/" method="POST" modelAttribute="Language">
+<form:form action="/" method="POST" modelAttribute="language">
 <p>
 <form:label path="name">Name</form:label>
 <form:errors path="name"/>
@@ -41,9 +45,9 @@
 <form:input path="creator"/>
 </p>
 <p>
-<form:label path="currentversion">Version</form:label>
-<form:errors path="currentversion"/>
-<form:input path="currentversion"/>
+<form:label path="currentVersion">Version</form:label>
+<form:errors path="currentVersion"/>
+<form:input path="currentVersion"/>
 </p>
 <button>Submit</button>
 </form:form>

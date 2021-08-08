@@ -15,7 +15,7 @@ public class LanguageService {
 	}
 	
 	public List<Language> allLanguages() {
-		return this.langRepo.findall();
+		return this.langRepo.findAll();
 	}
 	
 	public Language findLanguage(Long id) {

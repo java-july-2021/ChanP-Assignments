@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name="language")
+@Table(name="languages")
 public class Language {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -19,16 +19,16 @@ public class Language {
 	@Size(min=2, max=20)
 	private String creator;
 	@NotNull
-	private Float currentversion;
+	private Float currentVersion;
 	
 	public Language() {
 
 	}
 
-	public Language(String name, String creator, Float currentversion) {
+	public Language(String name, String creator, Float currentVersion) {
 		this.name = name;
 		this.creator = creator;
-		this.currentversion = currentversion;
+		this.currentVersion = currentVersion;
 	}
 
 	public Long getId() {
@@ -55,12 +55,12 @@ public class Language {
 		this.creator = creator;
 	}
 
-	public Float getCurrentversion() {
-		return currentversion;
+	public Float getCurrentVersion() {
+		return currentVersion;
 	}
 
-	public void setCurrentversion(Float currentversion) {
-		this.currentversion = currentversion;
+	public void setCurrentVersion(Float currentVersion) {
+		this.currentVersion = currentVersion;
 	}
 	
 }
